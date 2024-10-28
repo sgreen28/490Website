@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Information - My Simple Website</title>
+    <link rel="stylesheet" href="vet.css">
+</head>
+<body>
+    <header>
+        <h1>Payment Information</h1>
+        <nav>
+            <ul>
+                <li><a href="vet.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="payment.html">Payment Information</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Enter Employee Information</h2>
+            <form id="paymentForm">
+                <label for="employeeId">Employee ID:</label>
+                <input type="text" id="employeeId" name="employeeId" required>
+
+                <label for="employeeEmail">Email:</label>
+                <input type="email" id="employeeEmail" name="employeeEmail" required>
+
+                <button type="submit">Get Payment Infomation</button>
+            </form>
+        </section>
+
+        <section id="paymentInfo" style="display:none;">
+            <h2>Payment Information</h2>
+            <p><strong>Employee ID:</strong> <span id="displayEmployeeId"></span></p>
+            <p><strong>Email:</strong> <span id="displayEmployeeEmail"></span></p>
+            <p><strong>Hours Worked:</strong> <span id="displayHoursWorked"></span></p>
+            <p><strong>Payment:</strong> $<span id="displayPayment"></span></p>
+        </section>
+    </main>
+
+    <footer>
+		 <h3>Team Members</h3>
+         <p>Spencer Green - Project Manager/QA Tester</p>
+         <p>Seong Lee​ - Back-end Developer</p>
+         <p>Alaa Albakhiet​ - Frontend Developer</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle payment information retrieval
+        const paymentForm = document.getElementById('paymentForm');
+        const paymentInfoSection = document.getElementById('paymentInfo');
+
+        paymentForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get values from the form
+            const employeeId = document.getElementById('employeeId').value;
+            const employeeEmail = document.getElementById('employeeEmail').value;
+
+            // Simulate fetching payment data based on employee ID
+            // In a real application, this data would come from a database or API
+            const hoursWorked = 40; // Example: Assume 40 hours worked
+            const hourlyRate = 15; // Example: Assume hourly rate is $15
+            const payment = hoursWorked * hourlyRate;
+
+            // Display the payment information
+            document.getElementById('displayEmployeeId').textContent = employeeId;
+            document.getElementById('displayEmployeeEmail').textContent = employeeEmail;
+            document.getElementById('displayHoursWorked').textContent = hoursWorked;
+            document.getElementById('displayPayment').textContent = payment.toFixed(2);
+
+            // Show the payment information section
+            paymentInfoSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

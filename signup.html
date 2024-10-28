@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Sign Up - My Simple Website</title>
+    <link rel="stylesheet" href="vet.css">
+</head>
+<body>
+    <header>
+        <h1>Employee Sign Up</h1>
+        <nav>
+            <ul>
+                <li><a href="vet.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="payment.html">Payment Information</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sign Up for Extra Shifts</h2>
+            <form id="signupForm">
+                <label for="employeeName">Name:</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+
+                <label for="employeeEmail">Email:</label>
+                <input type="email" id="employeeEmail" name="employeeEmail" required>
+
+                <label for="shiftDate">Shift Date:</label>
+                <input type="date" id="shiftDate" name="shiftDate" required>
+
+                <label for="shiftTime">Shift Time:</label>
+                <input type="time" id="shiftTime" name="shiftTime" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+			<div class="confirmation-message" id="confirmationMessage">
+                You have successfully signed up for the shift!
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		 <h3>Team Members</h3>
+         <p>Spencer Green - Project Manager/QA Tester</p>
+         <p>Seong Lee​ - Back-end Developer</p>
+         <p>Alaa Albakhiet​ - Frontend Developer</p>
+    </footer>
+	<script src="script.js"></script>
+</body>
+</html>
